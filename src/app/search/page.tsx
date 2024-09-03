@@ -16,7 +16,7 @@ export default async function SearchPage({searchParams}: SearchPageProps) {
         redirect('/')
     }
     return (
-        <div>
+        <div className='mx-4 md:mx-0 '>
             <div className='flex items-center'>
                 <Link href={paths.home()}>
                     <Icons.back className="hover:scale-105 transition-all text-secondary ease-in-out duration-500"/>
