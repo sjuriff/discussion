@@ -11,6 +11,7 @@ import { auth} from '@/auth'
 import { db } from '@/db'
 import paths  from '@/paths'
 
+//TODO: Make custom error messages
 const createTopicSchema = z.object({
     name: z
     .string()

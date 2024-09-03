@@ -25,12 +25,12 @@ export default function TopicShowPage({params}: TopicShowPageProps) {
     const {slug} = params
     return (
         <div className="grid grid-cols-4 gap-4 p-4 ">
-            <div className="col-span-3">
+            <div className="col-span-4 md:col-span-3">
                 <h1 className="text-2xl text-default m-2 font-sans font-bold">{slug}</h1>
                 <PostList fetchData={() => fetchPostsByTopicSlug(slug)}/>
             </div>
             
-            <div className="col-span-1 mt-12">
+            <div className="col-span-4 md:col-span-1 mt-4 md:mt-12">
                 <Card className="w-full flex flex-col ">
                     <CardHeader className="flex items-center bg-tertiaryContainer justify-center bg-opacity-50">
                         <h1  className="text-xl text-default font-sans font-bold text-onTertiaryContainer ">Create a new Post</h1>
