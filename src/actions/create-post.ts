@@ -10,7 +10,7 @@ import { z } from "zod"
 import { auth} from '@/auth'
 import { db } from '@/db'
 import paths  from '@/paths'
-
+//TODO: Make custom error messages
 const createPostSchema = z.object({
     title: z
     .string()

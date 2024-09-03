@@ -26,12 +26,13 @@ export default function TopicCreateForm() {
 
             <PopoverContent>
                 <form action={action} className='p-2' >
-                    <div className='flex flex-col gap-4 w-60 md:w-80'>
+                    <div className='flex flex-col gap-4 w-72 md:w-80'>
                         <div className='flex flex-col gap-2'>
                             <h3 className='text-lg text-center text-default font-sans font-bold'>Create a Topic</h3>
                             <Divider className='bg-primary'/>
                         </div>
                         <Input
+                            autoFocus
                             label="Name"
                             labelPlacement='outside'
                             placeholder='Name'
