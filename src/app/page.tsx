@@ -17,11 +17,11 @@ export default  function Home() {
   return (
     <div className="grid grid-cols-4 gap-4 p-4 bg-base">
 
-      <div className="col-span-3">
+      <div className="col-span-4 md:col-span-3">
         <h1 className="text-2xl text-default m-2 font-sans font-bold border-primary">Top Posts</h1>
         <PostList fetchData={fetchTopPosts}/>
       </div>
-      <Card classNames={{body: 'border border-secondaryContainer', header: 'border border-secondaryContainer', footer: 'border border-secondaryContainer'}} className="col-span-1 ">
+      <Card classNames={{body: 'border border-secondaryContainer', header: 'border border-secondaryContainer', footer: 'border border-secondaryContainer'}} className="col-span-4 md:col-span-1 ">
         <CardHeader className="flex bg-secondaryContainer bg-opacity-50 visible w-full justify-center ">
           <h3 className="text-lg mt-2 font-bold font-sans text-onSecondaryContainer">Topics</h3>
         </CardHeader>

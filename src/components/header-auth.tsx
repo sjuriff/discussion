@@ -10,7 +10,7 @@ import{
     PopoverContent
 } from '@nextui-org/react'
 
-
+import {signOut as nextAuthSignOut} from 'next-auth/react'
 import * as actions from '@/actions'
 import { useSession } from 'next-auth/react'
 
@@ -37,22 +37,24 @@ export default function HeaderAuth() {
             </PopoverTrigger>
             <PopoverContent>
                 <div className="p-4">
-                    <form action={actions.signOut}>
+                    <form action={async ()=>{ 
+                        await actions.signOut();
+                        await nextAuthSignOut({redirect: false})}}>
                         <Button type="submit" color="danger">Sign out</Button>
                     </form>
                 </div>
             </PopoverContent>
         </Popover>
     }else{
-        authContent = <>
-            <NavbarItem>
+        authContent = <div className="flex flex-col gap-1 md:flex-row md:gap-2">
+            <NavbarItem >
                 <Popover classNames={{content: ' invisible ', base: ''}}  backdrop='opaque' placement="bottom">
                     <PopoverTrigger>
-                    <Button  variant="bordered" color="primary">
+                    <Button className=" h-9 md:h-10"  variant="bordered" color="primary">
                         Sign in
                     </Button>
                     </PopoverTrigger>
-                    <PopoverContent  className="flex-row gap-2"  >
+                    <PopoverContent  className="flex-col md:flex-row gap-2"  >
                         <div className="bg-base bg-opacity-75 visible border p-2  rounded-xl ">
                             <form  action={actions.signInWithGoogle}>
                                 <Button type="submit"  variant="solid" color="secondary" startContent={<Icons.Google/>}>
@@ -70,15 +72,15 @@ export default function HeaderAuth() {
                     </PopoverContent>
                 </Popover>
             </NavbarItem>
-            <NavbarItem>
+            <NavbarItem className="hidden md:block">
                 <form >
                     {/** TODO: CREATE SIGN UP */}
-                    <Button  variant="flat" color="primary">
+                    <Button className=" h-7 md:h-10 "  variant="flat" color="primary">
                         Sign up
                     </Button>
                 </form>
             </NavbarItem>
-        </>
+        </div>
     }
     
 

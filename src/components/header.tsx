@@ -25,20 +25,20 @@ export default function Header() {
         <Navbar className="shadow mb-6 bg-base" >
             <NavbarBrand >
             <Link className="hover:scale-105 transition-all duration-500 ease-in-out" href={paths.home()} >
-                <div className="flex font-sans font-bold text-xl  gap-2 text-primary items-center">
-                    Discuss<Icons.Code className="text-2xl"/> 
+                <div className="flex font-sans font-bold text-sm md:text-xl  gap-2 text-primary items-center">
+                    Discuss<Icons.Code className="text-lg md:text-2xl"/> 
                 </div>
             </Link>
             </NavbarBrand>
-            <NavbarContent justify="center">
-                <NavbarItem>
-                    <Suspense>
+            <NavbarContent  justify="center">
+                <NavbarItem className="text-center">
+                    <Suspense> 
                         <SearchInput/>
-                    </Suspense>
+                    </Suspense> 
                 </NavbarItem>
             </NavbarContent>
             
-            <NavbarContent justify="end">
+            <NavbarContent  justify="end">
                 <HeaderAuth/>
             </NavbarContent>        
         </Navbar>

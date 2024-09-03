@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className }>
-        <div className='container mx-auto bg-base px-4 max-w-6xl'>
+        <div className='md:container md:mx-auto bg-base md:px-4 max-w-6xl'>
           <Providers>
             <Header/>
             {children}
