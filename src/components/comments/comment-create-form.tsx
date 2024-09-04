@@ -10,12 +10,14 @@ interface CommentCreateFormProps {
   postId: string;
   parentId?: string;
   startOpen?: boolean;
+  isComment?: boolean;
 }
 
 export default function CommentCreateForm({
   postId,
   parentId,
   startOpen,
+  isComment,
 }: CommentCreateFormProps) {
   const [open, setOpen] = useState(startOpen);
   const ref = useRef<HTMLFormElement | null>(null);
@@ -36,7 +38,7 @@ export default function CommentCreateForm({
 
   const form = (
     <form action={action} className="w-full" ref={ref}>
-      <div className="space-y-2 py-2 px-6">
+      <div className={isComment ? "space-y-2 py-2 p-0 md:px-6" : "space-y-2 py-2 px-6"}>
         <Textarea
           name="content"
           variant="bordered"
@@ -45,8 +47,8 @@ export default function CommentCreateForm({
           isInvalid={!!formState.errors.content}
           errorMessage={formState.errors.content?.join(", ")}
           classNames={{
-            base: "w-full h-24 ",
-            innerWrapper: 'p-2'
+            base: isComment ? "w-full h-20 md:h-24 " : "w-full h-24",
+            innerWrapper: isComment ? 'p-1 md:p-2' : 'p-2'
           }}
         />
 
@@ -55,7 +57,7 @@ export default function CommentCreateForm({
             {formState.errors._form?.join(", ")}
           </div>
         ) : null}
-        <div className="pt-2">
+        <div className={isComment ? "pt-2 text-center md:text-left" : "pt-2 "}>
           <FormButton  variant="flat" color="secondary">Create Comment</FormButton>
         </div>
       </div>
@@ -63,7 +65,7 @@ export default function CommentCreateForm({
   );
 
   return (
-    <div className="flex flex-col items-start justify-center gap-2">
+    <div className="flex w-full flex-col items-start justify-center gap-2 ">
       <Button  size="sm" color="secondary" variant="light" onClick={() => setOpen(!open)}>
         Reply
       </Button>

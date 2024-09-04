@@ -36,11 +36,11 @@ export default function PostShowPage({params}: PostShowPageProps) {
     const {slug, postId} = params
     return (
         <div>
-            <Link className="flex gap-2 text-secondary" href={paths.topicShow(slug)}><Icons.back className="hover:scale-105 transition-all text-secondary ease-in-out duration-500"/>{slug}</Link>
+            <Link className="flex gap-2 mx-4 md:mx-0 text-secondary" href={paths.topicShow(slug)}><Icons.back className="hover:scale-105 transition-all text-secondary ease-in-out duration-500"/>{slug}</Link>
             <Suspense fallback={<PostShowLoading/>}>
                 <PostShow postId={postId}/>
             </Suspense>
-            <CommentCreateForm postId={postId} startOpen/>
+            <CommentCreateForm  postId={postId} startOpen/>
             <Suspense fallback={<CommentListLoading/>}>
                 <CommentList postId={postId}/>
             </Suspense>
