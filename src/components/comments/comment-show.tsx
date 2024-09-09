@@ -46,7 +46,7 @@ export default async function CommentShow({ commentId, postId }: CommentShowProp
   });
 
   return (
-    <div className="p-4 border mt-2 mb-1">
+    <div className="p-4 border rounded-lg mt-2 mb-1">
     <div className="flex flex-col gap-3">
       <div className="flex items-center gap-2 ">
         <Image

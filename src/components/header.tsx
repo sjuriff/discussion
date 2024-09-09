@@ -4,8 +4,7 @@ import{
     Navbar,
     NavbarBrand,
     NavbarContent,
-    NavbarItem,
-    Input
+    NavbarItem
 } from '@nextui-org/react'
 import paths  from '@/paths'
 import HeaderAuth from '@/components/header-auth';

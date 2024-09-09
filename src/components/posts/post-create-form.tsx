@@ -28,7 +28,7 @@ export default function PostCreateForm({slug}: PostCreateFormProps) {
     return (
         <Popover classNames={{content: 'border bg-base border-primary border-1 placement-left'}} backdrop='blur' placement={isMobile? 'top' : 'left'}>
             <PopoverTrigger>
-                <Button  color="secondary">Create Post</Button>
+                <Button variant='shadow'  color="secondary">Create Post</Button>
             </PopoverTrigger> 
             <PopoverContent >
                 <form action={action} className='p-2'>

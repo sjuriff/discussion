@@ -14,8 +14,10 @@ import paths  from '@/paths'
 const createPostSchema = z.object({
     title: z
     .string()
-    .min(3),
-    content: z.string().min(10)
+    .min(3, {message: 'Tilte must be at least 3 characters long'}),
+    content: z
+    .string()
+    .min(10, {message: 'Content must be at least 10 characters long'})
 })
 
 interface Errors{

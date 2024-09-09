@@ -15,10 +15,10 @@ import paths  from '@/paths'
 const createTopicSchema = z.object({
     name: z
     .string()
-    .min(3)
+    .min(3, {message: 'Name must be at least 3 characters long'})
     .regex(/^[a-z-]+$/, {
         message: 'Must be lowercase letters or dashes without spaces'}),
-    description: z.string().min(10)
+    description: z.string().min(10, {message: 'Description must be at least 10 characters long'})
 })
 
 interface Errors {
