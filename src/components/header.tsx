@@ -21,7 +21,7 @@ import { Icons } from "@/icons";
 export default function Header() { 
 
     return (
-        <Navbar className="shadow mb-6 bg-base" >
+        <Navbar classNames={{base: 'md:border-x '}} className="shadow mb-6 bg-base" isBordered >
             <NavbarBrand >
             <Link className="hover:scale-105 transition-all duration-500 ease-in-out" href={paths.home()} >
                 <div className="flex font-sans font-bold text-sm md:text-xl  gap-2 text-primary items-center">
