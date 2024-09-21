@@ -22,8 +22,8 @@ Coolest Feature:
 
 
 TODO:
-[] Handle user Sign Up (Maybe with help of FireBase?)
-[] Handle media queriens for medium size screens (Ipad and different tablets) nad when users drags their browser screen
+- [ ] Handle user Sign Up (Maybe with help of FireBase?)
+- [ ] Handle media queriens for medium size screens (Ipad and different tablets) nad when users drags their browser screen
 
 
 
