@@ -13,7 +13,7 @@ Features:
 - Loading skelletons
 - Server Actions
 - Validating user input with ZOD
-- FormState and useFormState
+- FormState and useFormState hook to validate the user input on the server side and send it back to the client
 - OAuth with NextAuth
 
 
