@@ -1,4 +1,6 @@
 DISCUSS
+
+
 A Discussion forum made with Next.js. Users can log in with Google or GitHub, create topics, post under given topic and comment on posts.
 
 Technologies:
