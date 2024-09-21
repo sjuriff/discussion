@@ -1,7 +1,7 @@
 DISCUSS
 
 
-A Discussion forum made with Next.js. Users can log in with Google or GitHub, create topics, post under given topic and comment on posts.
+A Discussion forum made with Next.js. Users can log in with Google or GitHub, create topics, create posts under given topic and comments on posts.
 
 Technologies:
 - Next.js
@@ -12,7 +12,10 @@ Technologies:
 Features:
 - Loading skelletons
 - Server Actions
-- OAuth
+- Validating user input with ZOD
+- FormState and useFormState
+- OAuth with NextAuth
+
 
 Coolest Feature:
 - A recursive comment component to show comment and replies :)
