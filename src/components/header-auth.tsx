@@ -1,5 +1,4 @@
 'use client'
-import Link from "next/link"
 import { Icons } from "@/icons"
 import{
     NavbarItem,
@@ -16,15 +15,13 @@ import { useSession } from 'next-auth/react'
 
 export default function HeaderAuth() {
     //useSession doesnt direclty acces cookies, it makes a request to the backend to figure out if the user is logged in
-    //so we can have logg in in our header without all our pages being dynamic with making this component a klient component
+    //so we can have logg in in our header without all our pages being dynamic with making this component a client component
     //and let it handle the user authentication
-
     //we are doing the user authenification in the browser, so we dont try to access cookies from the server
-
     const session = useSession()
 
     let authContent: React.ReactNode;
-    // if session is loading, show nothing(null), show we dont show the sign in/sign up button while checking if the user is logged in
+    //if session is loading, show nothing(null), show we dont show the sign in/sign up button while checking if the user is logged in
     //while it is!
     if(session.status === 'loading'){
 

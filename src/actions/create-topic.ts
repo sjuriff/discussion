@@ -2,16 +2,15 @@
 //Creating a single file for one server action since the server action
 //function is going to be long and big, so the code will be easier to
 //manage and read in this structure.
+
 import {Topic} from '@prisma/client'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-//npm install zod
 import { z } from "zod"
 import { auth} from '@/auth'
 import { db } from '@/db'
 import paths  from '@/paths'
 
-//TODO: Make custom error messages
 const createTopicSchema = z.object({
     name: z
     .string()
@@ -44,7 +43,7 @@ interface CreateTopicFormState  {
 export async function createTopic(formState: CreateTopicFormState, formData: FormData): Promise<CreateTopicFormState> {
     //simulating a delay 2,5 seconds
     //await new Promise(resolve => setTimeout(resolve, 2500))
-     // as string, so we dont get the whole formdata entry object
+    //as string, so we dont get the whole formdata entry object
     const result = createTopicSchema.safeParse({
         name: formData.get('name') as string,
         description: formData.get('description') as string

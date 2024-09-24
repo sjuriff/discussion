@@ -29,15 +29,17 @@ export default function SearchInput() {
             innerWrapper:[
                 'w-full'
             ],
-             inputWrapper:[
+            inputWrapper:[
                 'lg:h-1/2',
                 'h-1',
                 '',
                 'w-full',
-               /*  'group-data-[focus=true]:border-primary ',
+                /*  
+                'group-data-[focus=true]:border-primary ',
                 'group-data-[focus=true]:border-1',
                 'group-data-[focus=true]:shadow-[0_0_0_1px]',
-                'group-data-[focus=true]:ring-0' */
+                'group-data-[focus=true]:ring-0' 
+                */
             ],
             base:[
                 ''
@@ -45,7 +47,6 @@ export default function SearchInput() {
             mainWrapper:[
                 ''
             ]
- 
         }}/>
     </form>
     )

@@ -1,7 +1,7 @@
 /*
-Vi lager path-helpers slik at vi har alle stiene våre på en plass.
-Hvis noen stier skulle dnre seg slipper vi å gå gjennom pages og komponenter og funksjoner for å sjekke
-at alle linker og revalidate path stiene er oppdatert. High coohesion low coopling, gjenbruk osv.
+Creating path-helpers so that we have all the paths in one place.
+If some paths were to change, we dont need to go trough pages, components and function  to check 
+if all links and revalidate path paths are up to date . High coohesion low coopling etc.
 */
 
 const paths = {

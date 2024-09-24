@@ -1,5 +1,6 @@
 'use client'
 import { useSession } from 'next-auth/react'
+//NOT IN USE
 
 export default function Profile() {
     const session = useSession()

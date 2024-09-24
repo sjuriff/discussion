@@ -15,7 +15,7 @@ import { Divider } from '@nextui-org/react'
 
 
 export default function TopicCreateForm() {
-    //second argument to useFormState({errors:{}}) must match the first type in the actions.createTopic functions params
+    //Second argument to useFormState({errors:{}}) must match the first type in the actions.createTopic functions params
     const [formState, action] = useFormState(actions.createTopic, {errors:{}})
     return (
         <Popover classNames={{content: 'border bg-base border-primary border-1'}} backdrop='blur' placement='top'> 
@@ -60,19 +60,20 @@ export default function TopicCreateForm() {
                             isInvalid={!!formState.errors.description}
                             errorMessage={formState.errors.description?.join(', ')}
                         />
-                        {  //will also work, but be carefull if your value could be anything else the false, like 0
-                            // logical and operator. If value is true, then the thing after && will apear.
-                            //else it will ignore it
-                            /*  formState.errors._form &&
-                            <div className='bg-red-400'>
-                                {formState.errors._form?.join(', ')}
-                            </div>  */
+                        {
+                        //Logical and operator. If value is true, then the thing after && will appear.
+                        //else it will ignore it  
+                        //This will also work, but be carefull if your value could be anything else the false, like 0
+                            /*formState.errors._form &&
+                                <div className='bg-red-400'>
+                                    {formState.errors._form?.join(', ')}
+                                </div> */
                             formState.errors._form ?
                             <div className='p-2 rounded bg-red-200 border border-red-400 '>
                                 {formState.errors._form?.join(', ')}
                             </div> : null
                         }
-                        <FormButton  color='success'  >Create</FormButton>
+                        <FormButton color='success'>Create</FormButton>
                     </div>
                 </form>
                 

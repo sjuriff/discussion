@@ -1,19 +1,17 @@
 import PostList from "@/components/posts/post-list"
 import TopicCreateForm from "@/components/topics/topic-create-form"
 import TopicList from "@/components/topics/topic-list"
-import {Divider, Card, CardHeader, CardBody, CardFooter} from '@nextui-org/react'
+import { Card, CardHeader, CardBody, CardFooter} from '@nextui-org/react'
 import { fetchTopPosts } from "@/db/queries/posts"
 
 
 //Intallingnextui we need to install the a specific version to avoid errors
 //npm install --save-exact @nextui-org/react@2.2.9 framer motion
-//Vi må så gjøre endringer i tailwindconfig.ts filen.
-//Se filen for å se fremgangen
+//we have to make changes in the tailwindconfig.ts file.
+//See the file to see the process.
 
 
 export default  function Home() {
-//Header compnenten i layout.tsx filen kaller på en dynamisk funksjon som etter eller oppdaterer cookiene våre.
-//Derfor vil alle sidene våre bli dynamiske ved build 
   return (
     <div className="grid grid-cols-4 gap-4 p-4 bg-base">
 

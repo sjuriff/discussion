@@ -21,15 +21,11 @@ export default function CommentCreateForm({
 }: CommentCreateFormProps) {
   const [open, setOpen] = useState(startOpen);
   const ref = useRef<HTMLFormElement | null>(null);
-  const [formState, action] = useFormState(
-    actions.createComment.bind(null, { postId, parentId }),
-    { errors: {} }
-  );
+  const [formState, action] = useFormState(actions.createComment.bind(null, { postId, parentId }),{ errors: {} });
 
   useEffect(() => {
     if (formState.success) {
       ref.current?.reset();
-
       if (!startOpen) {
         setOpen(false);
       }

@@ -2,15 +2,15 @@
 //Creating a single file for one server action since the server action
 //function is going to be long and big, so the code will be easier to
 //manage and read in this structure.
+
 import {Post} from '@prisma/client'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
-//npm install zod
 import { z } from "zod"
 import { auth} from '@/auth'
 import { db } from '@/db'
 import paths  from '@/paths'
-//TODO: Make custom error messages
+
 const createPostSchema = z.object({
     title: z
     .string()
@@ -76,7 +76,7 @@ export async function createPost(slug: string, formState: CreatePostFormState, f
 
     //declaring the variabel above the try/catch with the let keyword
     //so we can use it in redirect outside the try/catch scope
-    //sicne redirect throws an error, we can have it inside the try scope
+    //sicne redirect throws an error, we cant have it inside the try scope
     let post: Post
     try{
         post = await db.post.create({

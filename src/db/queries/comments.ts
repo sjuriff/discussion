@@ -12,7 +12,7 @@ export type CommentWithAuthor = Comment & {
     Its going to look at the function(fetchCommentsByPostId) we are calling from different compnents.
     Lets say we are calling fetcghCommentsByPostId(1) in two components and fecthCommentsByPostId(2) in
     one component. The cahing system is going to take  a look at these function, and remove the duplicates
-    that is sees. In this case it would be one of the fetcghCommentsByPostId(1), since the same
+    that it sees. In this case it would be one of the fetcghCommentsByPostId(1), since the same
     function with the same arguments is called twice. Its then gonna do the query from fecthCommentsByPostId(1)
     and fetchCommentsByPostId(2) one time each, and send the data back to the components that needs them. The 
     query in fetchCommentsByPostId(1) will runned once, but the data will be passed to the two components 
