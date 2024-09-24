@@ -1,11 +1,11 @@
 import type { Config } from 'tailwindcss'
 import {nextui} from '@nextui-org/react'
-//Forteller taiwind hvor den skal gå får å finne alle klassenavnene vi bruker i vårt prosjekt
-//'./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}
-// i tilleg:
+//Shows Tailwind where to go to find classnames we use in our project
+//./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}
+//also:
 //darkMode: 'class',
 //plugins: [nextui()],
-// se hvor de er under
+
 
 
 const config: Config = {

@@ -1,8 +1,8 @@
 'use server'
 import * as auth from '@/auth'
 
-//Wrapper signIn funksjonen fra next-auth  i en server action
-//signIn funskjonen tar en string som definerer hvilken provider vi vil bruke for å logge inn
+//Wrapping the signIn function from next-auth in a server action
+//The signIn function takes a string that defines which provider we will use to log in
 export async function signInWithGithub(){
     return auth.signIn('github')
 }

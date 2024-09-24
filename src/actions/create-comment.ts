@@ -2,6 +2,7 @@
 //Creating a single file for one server action since the server action
 //function is going to be long and big, so the code will be easier to
 //manage and read in this structure.
+
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { auth } from "@/auth";
@@ -25,6 +26,7 @@ export async function createComment(
   formState: CreateCommentFormState,
   formData: FormData
 ): Promise<CreateCommentFormState> {
+  
   const result = createCommentSchema.safeParse({
     content: formData.get("content"),
   });

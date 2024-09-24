@@ -1,9 +1,9 @@
-import type { Post, User, Topic } from '@prisma/client';
 import Link from 'next/link';
 import paths from '@/paths';
 import {PostWithDetails} from '@/db/queries/posts'
+
 /*
-TopicShowPage or PostList needs ro reach in to the DB ti find all posts and coohering data.
+TopicShowPage or PostList needs ro reach in to the DB to find all posts and coohering data.
 Is it best practice to fecth data in the page.tsx og the child.  
 Option one is to fetch data in the page.tsx. and pass it down to the child as a prop
 Option two is that the child component fetches its own data. 
@@ -21,7 +21,7 @@ do a query to the db a loooot of times just to get som simple data. You can hand
 by making a super descriptive props interface including all data the child component need. You will then get a type
 error if you only send the post object to the child component.
 
-cons:
+Cons:
 1: Can lead to overfetching of data:
 If we reuse the post list component TopicShowPage and HomePage we are goin to overfetch data
 If we fetch data in the HomePage to display inside of the PoslList component, we need to fetch additional data

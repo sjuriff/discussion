@@ -1,7 +1,5 @@
 'use client'
 import { useFormState } from 'react-dom'
-import { useProvidedWindow } from 'framer/render/WindowContext.js'
-
 import{
     Input,
     Button,
@@ -14,6 +12,7 @@ import * as actions from '@/actions'
 import FormButton from '@/components/common/form-button'
 import { Divider } from '@nextui-org/react'
 import useWindowDimensions from '@/useWindowDimensions'
+
 interface PostCreateFormProps {
     slug: string
 }
@@ -59,13 +58,14 @@ export default function PostCreateForm({slug}: PostCreateFormProps) {
                             isInvalid={!!formState.errors.content}
                             errorMessage={formState.errors.content?.join(', ')}
                         />
-                        {  //will also work, but be carefull if your value could be anything else the false, like 0
-                            // logical and operator. If value is true, then the thing after && will apear.
-                            //else it will ignore it
-                            /*  formState.errors._form &&
-                            <div className='bg-red-400'>
-                                {formState.errors._form?.join(', ')}
-                            </div>  */
+                        {   
+                        //Logical and operator. If value is true, then the thing after && will appear.
+                        //else it will ignore it
+                        //This will also work, but be carefull if your value could be anything else the false, like 0
+                            /*formState.errors._form &&
+                                <div className='bg-red-400'>
+                                    {formState.errors._form?.join(', ')}
+                                </div>  */
                             formState.errors._form ?
                             <div className='p-2 rounded bg-red-200 border border-red-400 '>
                                 {formState.errors._form?.join(', ')}

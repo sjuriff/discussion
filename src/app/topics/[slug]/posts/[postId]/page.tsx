@@ -6,12 +6,12 @@ import PostShow from "@/components/posts/post-show"
 import PostShowLoading from "@/components/posts/post-show-loading"
 import CommentCreateForm from "@/components/comments/comment-create-form"
 import CommentList from "@/components/comments/comment-list"
-import {fetchCommentsByPostId} from "@/db/queries/comments"
 import CommentListLoading from '@/components/comments/comment-list-loading'
 
 
-//SUSPENSE
+
 /*
+SUSPENSE:
 By adding these suspense components around server components, its going to dramatically change the application
 is loaded up. Now, because suspense is included, when the user makes a request to our server, we are going to
 load the PostShow component/page. We can kind of imagine theres almost going to be like som empty spaces here

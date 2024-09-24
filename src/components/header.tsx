@@ -11,12 +11,14 @@ import HeaderAuth from '@/components/header-auth';
 import SearchInput from "./search-input";
 import { Icons } from "@/icons";
 
-//If a client component that are taking use of useSearchParams, the hook is not going
-//to be runned on the server. So if next sees a client component that takes useSearchParams,
-//and tries to render it on the server, next wil say, i dont want to do this. Instead, it will
-//take all the javascript on the /search route and run it in the browser(client side).
-//If we wrap the search input with suspense, it allows next to render everthing up to the
-//searchInput on the sever, and everthing inside of the suspense will be rendered on the client.
+/*
+If a client component that are taking use of useSearchParams, the hook is not going
+to be runned on the server. So if next sees a client component that takes useSearchParams,
+and tries to render it on the server, next wil say, i dont want to do this. Instead, it will
+take all the javascript on the /search route and run it in the browser(client side).
+If we wrap the search input with suspense, it allows next to render everthing up to the
+searchInput on the sever, and everthing inside of the suspense will be rendered on the client.
+*/
 
 export default function Header() { 
 

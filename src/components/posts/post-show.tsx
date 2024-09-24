@@ -1,7 +1,7 @@
-// its not likely that we are going to reuse this component anywhere in the project. 
+//Its not likely that we are going to reuse this component anywhere in the project. 
 //We dont need to focus on making it reusable, even tho in most cases that would be best practice.
-//This child can in this case fetch its own data, and no need tok take the steps of deciding what data to fetch
-//in the parent and passing and fetching them in the child. Keep it somple .
+//This child can in this case fetch its own data, and no need to take the steps of deciding what data to fetch
+//in the parent and passing and fetching them in the child. Keep it simple .
 import { notFound } from "next/navigation";
 import { db } from "@/db";
 
@@ -12,11 +12,11 @@ interface PostShowProps {
 export default async function  PostShow({postId}: PostShowProps) {
   //timeout to test the loading-skelleton
   await new Promise(resolve => setTimeout(resolve, 1500))
-  // whenever we do findFirst we might get null, and not the object we are looking for
+
   const post = await db.post.findFirst({
     where: {id: postId}
   })
-
+// whenever we do findFirst we might get null, and not the object we are looking for
   if (!post) {  
     notFound()
 }
